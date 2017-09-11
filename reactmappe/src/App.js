@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router,
+    Route,
+    Link } from 'react-router-dom'
 import logo from './logo.svg';
 import './App.css';
 
@@ -45,9 +48,17 @@ class App extends Component {
   render() {
 
     return (
+
       <div className="App">
         <div className="App-header">
+            <ul>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/Bilder">Bilder</Link></li>
+            </ul>
           <h2>Sia til </h2><h1><b>Bernt</b></h1>
+        </div>
+        <div className="Nav">
+          <h3>Hovedside   |   </h3>
         </div>
         <p className="App-intro">
           <code>src/App.js</code>
