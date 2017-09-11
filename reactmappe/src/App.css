@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: lightblue;
 }
 
 .App-logo {
@@ -9,8 +10,8 @@
 
 .App-header {
   background-color: #222;
-  height: 150px;
-  padding: 20px;
+  height: 80px;
+  padding: 10px;
   color: white;
 }
 
@@ -26,6 +27,17 @@
   position: absolute;
   top: 80%;
 }
+#berntBilde{
+  height: 300px;
+  width: 500px;
+}
+#OS{
+  font-style: italic;
+  font-size: 45px;
+  text-decoration: underline;
+}
+
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

@@ -18,6 +18,7 @@ const header = React.createElement(
   'Hello World'
 )
 
+
 function tick() {
   const element = (
     <div>
@@ -32,6 +33,16 @@ function tick() {
   return element;
 }
 
+class Clock extends React.Component {
+  render() {
+    return (
+      <div>
+        <h2>It is {this.props.asd.toLocaleTimeString()}.</h2>
+      </div>
+    );
+  }
+}
+
 class App extends Component {
   constructor(){
     super()
@@ -39,10 +50,11 @@ class App extends Component {
 
   }
   handleButtonClick(){
-    if (this.state.klipper === "Ja") {
-      this.setState({klipper: "Nei"})
+    if (this.state.klipper === "Nei") {
+      this.setState({klipper: "Ja", berntStyle: {width: "300px", height: "150px"}});
+
     }else {
-      this.setState({klipper: "Ja"})
+      this.setState({klipper: "Nei", berntStyle: {width: "600px", height: "300px"}});
     }
   }
   render() {
@@ -61,23 +73,21 @@ class App extends Component {
           <h3>Hovedside   |   </h3>
         </div>
         <p className="App-intro">
-          <code>src/App.js</code>
         </p>
+        <img src="Gressklipperroboten Bernt.jpg" style={this.state.berntStyle}/>
         <h3>
           {this.state.klipper}
           <button onClick={this.handleButtonClick.bind(this)}>Kappen</button>
           Hello, {formatName(petter)}!
+          <Clock asd={new Date()}/>
           {tick()}
         </h3>
-        <div className="footer">
-          {header}
-          <h3>
-            ReactJS er et javascript framework
-          </h3>
-        </div>
+
       </div>
     );
   }
 }
+
+
 
 export default App;
