@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router,
-    Route,
-    Link } from 'react-router-dom'
+import {Link } from 'react-router-dom'
 import logo from './logo.svg';
 import './Bilder.css';
 
@@ -51,7 +49,8 @@ class Bilder extends Component {
 
             <div className="App">
                 <div className="App-header">
-                    <h2>Bilder </h2><h1><b>Bernt</b></h1>
+
+                    <h2>Bilder </h2><h3>av</h3><h1><b>Bernt</b></h1>
                 </div>
                 <div className="Nav">
                     <h3>Hovedside   |   </h3>

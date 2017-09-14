@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router,
-    Route,
-    Link } from 'react-router-dom'
+import {Link } from 'react-router-dom'
+
 import logo from './logo.svg';
 import './App.css';
 
@@ -33,6 +32,8 @@ function tick() {
   return element;
 }
 
+
+
 class Clock extends React.Component {
   render() {
     return (
@@ -47,7 +48,6 @@ class App extends Component {
   constructor(){
     super()
     this.state = {klipper: "Nei"}
-
   }
   handleButtonClick(){
     if (this.state.klipper === "Nei") {
@@ -63,14 +63,10 @@ class App extends Component {
 
       <div className="App">
         <div className="App-header">
-            <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/Bilder">Bilder</Link></li>
-            </ul>
+
           <h2>Sia til </h2><h1><b>Bernt</b></h1>
         </div>
         <div className="Nav">
-          <h3>Hovedside   |   </h3>
         </div>
         <p className="App-intro">
         </p>
