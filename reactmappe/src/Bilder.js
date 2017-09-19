@@ -15,6 +15,10 @@ const header = React.createElement(
     {className: 'Greeting'},
     'Hello World'
 )
+$(window).on('scroll', function () {
+    console.log("A-yU");
+});
+
 
 function tick() {
     const element = (
@@ -30,11 +34,35 @@ function tick() {
     return element;
 }
 
+class BildeLinje extends Component
+{
+
+    render()
+    {
+        if(this.props.type==0)
+        {
+            return <div className="blueLine">
+                <img src={this.props.url} alt="k"/>
+                <p>{this.props.desc}</p>
+            </div>
+        }
+        else
+        {
+            return <div className={"purpleLine"}>
+                <img src={this.props.url} alt="a" />
+                <p>{this.props.desc}</p>
+            </div>
+        }
+
+    }
+}
+const picsData=[["Bernt.jpg","Bernt"], ["Bernt1.jpg", "The beautiful machine"],["Bernt2.jpg", "Razor sharp blades"],["Bernt3.png","Fast as lightning"], ["Bernt4.jpg", "Not afraid to get naked"]];
+var index=0;
+const pics = picsData.map((data)=> <BildeLinje  url={data[0]} desc={data[1]} type={(index++)%2} />);
 class Bilder extends Component {
     constructor(){
         super()
         this.state = {klipper: "Nei"}
-
     }
     handleButtonClick(){
         if (this.state.klipper === "Ja") {
@@ -50,26 +78,12 @@ class Bilder extends Component {
             <div className="App">
                 <div className="App-header">
 
-                    <h2>Bilder </h2><h3>av</h3><h1><b>Bernt</b></h1>
+                    <h2>Bilder </h2><h3>av</h3><h1><b>Bernt</b></h1><h3>Scroll down for nudes</h3>
                 </div>
-                <div className="Nav">
-                    <h3>Hovedside   |   </h3>
+                <div className="Body">
+                    {pics}
                 </div>
-                <p className="App-intro">
-                    <code>src/App.js</code>
-                </p>
-                <h3>
-                    {this.state.klipper}
-                    <button onClick={this.handleButtonClick.bind(this)}>Kappen</button>
-                    Hello, {formatName(petter)}!
-                    {tick()}
-                </h3>
-                <div className="footer">
-                    {header}
-                    <h3>
-                        ReactJS er et javascript framework
-                    </h3>
-                </div>
+
             </div>
         );
     }
