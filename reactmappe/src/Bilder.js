@@ -15,9 +15,6 @@ const header = React.createElement(
     {className: 'Greeting'},
     'Hello World'
 )
-$(window).on('scroll', function () {
-    console.log("A-yU");
-});
 
 
 function tick() {
